@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Service\TemplateRenderer;
 
-class Contact extends BaseHandler
+class LoginHandler extends BaseHandler
 {
     private $templateRenderer;
 
@@ -15,6 +15,10 @@ class Contact extends BaseHandler
 
     public function showPage(): string
     {
-        return $this->templateRenderer->render('contact/contact.html', []);
+
+        $data = [
+            'title' => 'ehsan',
+        ];
+        return $this->templateRenderer->render('login/login.html', $data);
     }
 }

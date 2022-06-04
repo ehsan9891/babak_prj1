@@ -4,6 +4,13 @@ declare(strict_types=1);
 
 namespace App;
 
+use App\Handler\AdminHandler;
+use App\Handler\AdminHandlerFactory;
+use App\Handler\LoginHandler;
+use App\Handler\LoginHandlerFactory;
+use App\Middleware\AuthenticationMiddleware;
+use App\Middleware\AuthenticationMiddlewareFactory;
+
 /**
  * The configuration provider for the App module
  *
@@ -36,6 +43,9 @@ class ConfigProvider
             ],
             'factories'  => [
                 Handler\HomePageHandler::class => Handler\HomePageHandlerFactory::class,
+                AdminHandler::class => AdminHandlerFactory::class,
+                LoginHandler::class => LoginHandlerFactory::class,
+                AuthenticationMiddleware::class => AuthenticationMiddlewareFactory::class,
             ],
         ];
     }

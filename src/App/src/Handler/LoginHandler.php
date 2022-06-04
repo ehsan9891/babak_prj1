@@ -1,9 +1,6 @@
-<?php
-
-declare(strict_types=1);
+<?php declare(strict_types=1);
 
 namespace App\Handler;
-
 
 use Fig\Http\Message\RequestMethodInterface;
 use Laminas\Diactoros\Response\HtmlResponse;
@@ -33,14 +30,15 @@ class LoginHandler implements RequestHandlerInterface
         $viewVariables = [
             'error' => ''
         ];
-        if ($request->getMethod() == RequestMethodInterface::METHOD_POST) {
+        if ($request->getMethod() === RequestMethodInterface::METHOD_POST) {
             $username = $request->getParsedBody()['username'];
             $password = $request->getParsedBody()['password'];
-            if ($username == 'admin' && $password == 'admin') {
+            if ($username === 'admin' && $password === 'admin') {
+                $_SESSION['isAdmin'] = 'true';
                 return new RedirectResponse($this->urlHelper->generate('admin'));
-            } else {
-                $viewVariables['error'] = 'login failed';
             }
+
+            $viewVariables['error'] = 'login failed';
         }
 
         $output = $this->templateRenderer->render('app::login', $viewVariables);

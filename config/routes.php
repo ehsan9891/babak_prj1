@@ -43,7 +43,7 @@ return static function (Application $app, MiddlewareFactory $factory, ContainerI
     $app->get('/', App\Handler\HomePageHandler::class, 'home');
     $app->get('/api/ping', App\Handler\PingHandler::class, 'api.ping');
     $app->get(
-        '/admin',
+        '/admin[/]',
         [
             AuthenticationMiddleware::class,
             \App\Handler\AdminHandler::class
@@ -52,7 +52,7 @@ return static function (Application $app, MiddlewareFactory $factory, ContainerI
         'admin'
     );
     $app->route(
-        '/login',
+        '/login[/]',
         [
             \App\Handler\LoginHandler::class
         ]

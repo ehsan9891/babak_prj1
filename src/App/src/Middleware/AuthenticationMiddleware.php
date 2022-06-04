@@ -21,7 +21,7 @@ class  AuthenticationMiddleware implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        $isAdmin = false;
+        $isAdmin = ($_SESSION['isAdmin'] ?? '') === 'true';
         if (!$isAdmin) {
             $url = $this->urlHelper->generate('login');
             return new RedirectResponse($url);

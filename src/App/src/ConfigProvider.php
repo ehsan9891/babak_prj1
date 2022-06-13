@@ -10,6 +10,8 @@ use App\Handler\LoginHandler;
 use App\Handler\LoginHandlerFactory;
 use App\Middleware\AuthenticationMiddleware;
 use App\Middleware\AuthenticationMiddlewareFactory;
+use App\Service\CacheService;
+use App\Service\CacheServiceFactory;
 
 /**
  * The configuration provider for the App module
@@ -46,6 +48,7 @@ class ConfigProvider
                 AdminHandler::class => AdminHandlerFactory::class,
                 LoginHandler::class => LoginHandlerFactory::class,
                 AuthenticationMiddleware::class => AuthenticationMiddlewareFactory::class,
+                CacheService::class => CacheServiceFactory::class,
             ],
         ];
     }

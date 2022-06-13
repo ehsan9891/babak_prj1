@@ -80,6 +80,30 @@
       <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
       <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/psr/cache" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-ext-mongodb" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-eventmanager" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-dba" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-redis" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-xcache" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-memory" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-blackhole" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-wincache" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-zend-server" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-memcache" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-apcu" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-memcached" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-mongodb" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-apc" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-session" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache-storage-adapter-filesystem" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0">

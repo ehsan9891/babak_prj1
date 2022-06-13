@@ -50,25 +50,18 @@ class LoginHandler implements RequestHandlerInterface
                 $viewVariables['error'] = 'login failed';
             } else {
                 $sql = 'select * from tbl_user where username = :username and password = :password';
-                echo $sql;
                 $stmt = $connction->prepare($sql);
                 $stmt->execute(['username' => $username, 'password' => $password]);
                 $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
-                
-                foreach ($stmt->fetchAll() as $key => $value) {
-                    // you are admin
 
-                    var_dump($value);
-                    die;
+                if (count($stmt->fetchAll()) > 0) {
+                    $uuid = Uuid::uuid4();
+                    $this->cacheService->getStorage()->addItem($uuid . 'isAdmin', true);
+                    setcookie('userHash', $uuid->toString());
+                    return new RedirectResponse($this->urlHelper->generate('admin'));
                 }
-                die;
             }
-            if ($username === 'admin' && $password === 'admin') {
-                $uuid = Uuid::uuid4();
-                $this->cacheService->getStorage()->addItem($uuid . 'isAdmin', true);
-                setcookie('userHash', $uuid->toString());
-                return new RedirectResponse($this->urlHelper->generate('admin'));
-            }
+
 
             $viewVariables['error'] = 'login failed';
         }

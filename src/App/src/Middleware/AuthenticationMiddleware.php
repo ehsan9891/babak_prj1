@@ -3,6 +3,7 @@
 namespace App\Middleware;
 
 
+use App\Service\CacheService;
 use Laminas\Diactoros\Response\RedirectResponse;
 use Mezzio\Helper\UrlHelper;
 use Psr\Http\Message\ResponseInterface;
@@ -13,10 +14,15 @@ use Psr\Http\Server\RequestHandlerInterface;
 class  AuthenticationMiddleware implements MiddlewareInterface
 {
     private UrlHelper $urlHelper;
+    /**
+     * @var \App\Service\CacheService
+     */
+    private CacheService $cacheService;
 
-    public function __construct(UrlHelper $urlHelper)
+    public function __construct(UrlHelper $urlHelper, CacheService $cacheService)
     {
         $this->urlHelper = $urlHelper;
+        $this->cacheService = $cacheService;
     }
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
